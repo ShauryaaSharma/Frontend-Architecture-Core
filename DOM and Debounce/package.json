@@ -1,0 +1,27 @@
+{
+  "name": "frontend-architecture-core",
+  "version": "1.0.0",
+  "description": "A frontend repository focused on core concepts and real-world application logic. Covers API integration, state management, error handling, performance, and smooth backend interaction. Built with an emphasis on clean structure, scalability, and production-level thinking rather than just UI design.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShauryaaSharma/Frontend-Architecture-Core.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ShauryaaSharma/Frontend-Architecture-Core/issues"
+  },
+  "homepage": "https://github.com/ShauryaaSharma/Frontend-Architecture-Core#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
