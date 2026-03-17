@@ -1,0 +1,41 @@
+ <html>
+    <script>
+        let timeout;
+        function debouncePopulateDiv(){
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                populateDiv()
+            }, 1000);
+        }
+
+        function populateDiv() {
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("secondNumber").value;
+            fetch("http://localhost:5000/sum?a=" + a + "&b=" + b)
+                .then(function(response) {
+                    console.log(response);
+
+                    response.text()
+                        .then(function(ans) {
+                            console.log(ans);
+                            document.getElementById("finalSum").innerHTML = ans;
+                        })
+                })
+        }
+
+        // async function populateDiv2(){
+        //     const a = document.getElementById("firstNumber").value;
+        //     const b = document.getElementById("secondNumber").value;
+
+        //     const response = await fetch("http://localhost:5000/sum?a=" + a + "&b=" + b)
+        //     const ans = await response.text();
+        //     document.getElementById("finalSum").innerHTML = ans;
+        // }
+    </script>
+    <body>
+        <input oninput="debouncePopulateDiv()" type="text" id="firstNumber" placeholder="First Number"><br>
+        <input oninput="debouncePopulateDiv()" type="text" id="secondNumber" placeholder="Second Number"><br>
+        <!-- <button onclick="debouncePopulateDiv()">Calculate Sum</button> -->
+        <div id="finalSum"></div>
+    </body>
+ </html>
