@@ -41,6 +41,23 @@
 
             parent.appendChild(createChild(title, description, globalId++));
         }
-        
+        function updateFromServer(state){
+            const parent = document.getElementById("todos")
+            parent.innerHTML = "";
+            for (let i = 0; i < state.length; i++) {
+                const child = createChild(state[i].title, state[i].description, state[i].id);
+                parent.appendChild(child);
+                
+            }
+        }
+        updateFromServer([{
+            title: "Go to Gym",
+            description: "Behan i shadi aa gai hai patla hona hai !!!!",
+            id: 1
+        }, {
+            title: "Start studying for College Exam",
+            description: "Last chance to get 9 GPA, don't miss.",
+            id: 1
+        }])
     </script>
 </html>
