@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const adminMiddleware = require("../middleware/admin");
-const { Admin, Course } = require("../db")
+const { Admin, Course, User } = require("../db")
 const router = Router();
 
 // Admin Routes
